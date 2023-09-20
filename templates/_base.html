@@ -1,5 +1,4 @@
-{% load static %}
-<!-- carrega a pasta / localização dos arquivos estáticos -->
+{% load static %} <!-- carrega a pasta / localização dos arquivos estáticos -->
 <!DOCTYPE html>
 <html>
 
@@ -7,34 +6,28 @@
     <meta charset="utf-8">
     <title>
         {% block head_title %}{% endblock %}
-        <!-- bloco de título -->
     </title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-    {% block css %}
-    <!-- bloco de CSS -->
+
+    {% block css %} <!-- bloco de CSS -->
     {% endblock %}
+    
 </head>
 
 <body>
-    {% block header %}
-    <!-- bloco de cabeçalho -->
-    {% endblock %}
-    {% block main %}
-    <!-- bloco principal do body -->
-    {% block content %}
-    <!-- bloco de conteúdo -->
-
-    {% endblock %}
+    {% block header %} <!-- bloco de cabeçalho -->
     {% endblock %}
 
-    {% block footer %}
-    <!-- bloco de rodapé -->
+    {% block main %} <!-- bloco principal do body -->
+        {% block content %} <!-- bloco de conteúdo -->
+        {% endblock %}
     {% endblock %}
 
-    {% block javascript %}
-    <!-- bloco extra abaixo do body -->
+    {% block footer %} <!-- bloco de rodapé -->
+    {% endblock %}
+    
+    {% block javascript %} <!-- bloco extra abaixo do body -->
     {% endblock %}
 </body>
 
 </html>
-=================== _base.html
