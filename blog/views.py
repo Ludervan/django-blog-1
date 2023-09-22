@@ -1,5 +1,5 @@
 from django.shortcuts import render,  get_object_or_404
-from django.views.generic.detail import DetailView
+from django.views.generic import DetailView, ListView, TemplateView
 import json
 from django.core.serializers.json import DjangoJSONEncoder
 
@@ -64,7 +64,8 @@ class PostCreateView(CreateView):
     model = Post
     template_name = 'post/post_form.html'
     fields = ('body_text', )
-    success_url = reverse_lazy('posts_list')
+    # success_url = reverse_lazy('posts_list')
+    success_url = reverse_lazy('posts_all') # modifiquei para ir direto no template da aula do dia 20/09
 
 @csrf_exempt
 def create_post(request):
@@ -94,3 +95,11 @@ def create_post(request):
     response['Access-Control-Allow-Origin'] = '*'
     
     return response
+
+class PostListView(ListView):
+    model = Post
+    template_name = 'post/post_list.html'
+    context_object_name = 'posts'
+
+class SobreTemplateView(TemplateView):
+    template_name = 'post/sobre.html'
