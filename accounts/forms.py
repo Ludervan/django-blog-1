@@ -13,3 +13,4 @@ class AccountSignupForm(forms.ModelForm): # define um formulário para registro
       attrs={'type': 'date', 'required': 'required'}
   ),
 }
+    
