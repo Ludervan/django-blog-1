@@ -1,2 +1,2 @@
-.errorlist { color: red; }
-xx
+.errorlist { color: red; 
+.errorlist li { margin-bottom: 5px; }
