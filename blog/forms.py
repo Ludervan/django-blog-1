@@ -48,4 +48,4 @@ class PostModelForm(forms.ModelForm):
             attrs={"type": "date"}),
             "categoria": forms.RadioSelect(),
         }
-        labels = {"body_text": "", "categoria": "Assunto"} 
+        labels = {"body_text": "", "categoria": "Assunto"}  
